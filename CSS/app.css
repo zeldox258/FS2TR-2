@@ -1,0 +1,152 @@
+.omerCard{
+    background-color: aqua;
+    color: blueviolet;
+    width: 50%;
+    margin: 50px;
+    padding: 50px;
+    border: 15px solid black;
+    text-align: center;
+}
+
+.flexContainer{
+    width: 300px;
+    height: 300px;
+    background-color: bisque;
+    margin-bottom: 250px;
+    border: 20px solid black;
+   
+
+
+}
+
+.flexRow{
+    display: flex;
+    height: 100px;
+    width: 100%;
+}
+
+
+.a3{
+    background-color: aqua;
+    width: 3%;
+}
+
+.a7{
+    background-color: brown;
+    width: 7%;
+
+}
+
+.a10{
+    background-color: yellowgreen;
+
+    width: 10%;
+}
+
+.a15{
+    
+    background-color: yellow;
+    width: 15%;
+
+}
+
+.a20{
+    background-color:chartreuse;
+    width: 20%;
+
+}
+
+.a30{
+    background-color:blanchedalmond;
+    width: 30%;
+
+}
+
+.a40{
+    background-color: aquamarine;
+    width: 40%;
+}
+
+.a50{
+    background-color: burlywood;
+    width: 50%;
+}
+.a45{
+    background-color:darkmagenta;
+    width: 45%;
+}
+
+.a80{
+
+    background-color: red;
+    width: 80%;
+
+}
+
+
+.a3,.a10,.a15,.a20,.a30,.a40,.a50,.a7,.a80,.a45{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.handsomeSuleyman{
+    background-color:tan;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.handsomeSuleyman img{
+    border-radius: 50%;
+    border: 20px, solid black;
+}
+
+
+.flexrow2{
+    height: 100px;
+    display: flex;
+    width: 100%;
+}
+.row2{
+    height: 100px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.b40{
+    background-color: aqua;
+    width: 40%;
+}
+.b60{
+    background-color: darkmagenta;
+    width: 60%;
+}
+.b35{
+    background-color: red;
+    width: 35%;
+}
+.b65{
+    background-color: chartreuse; 
+    width: 65%;
+}
+.b20{
+    height: 20%;
+    background-color: blueviolet;
+}
+.b30{
+    height: 30%;
+    background-color: purple;
+}
+.b50{
+    height: 50%;
+    background-color: blue;
+}
+
+.b20, .b30, .b35, .b40, .b50, .b60, .b65{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
