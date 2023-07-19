@@ -204,12 +204,12 @@
 @keyframes M3D {
     
     0%,100%{transform: translateX(0px) translateY(0px);}
-    7% {transform: translateX(50px) translateY(0px) ;}
-    14% {transform: translateX(100px) translateY(50px) ;}
-    21% {transform: translateX(150px) translateY(0px) ;}
-    28% {transform: translateX(200px) translateY(0px) ;}
-    35% {transform: translateX(200px) translateY(100px) ;}
-    42% {transform: translateX(150px) translateY(100px);}
+    8% {transform: translateX(50px) translateY(0px) ;}
+    16% {transform: translateX(100px) translateY(50px) ;}
+    24% {transform: translateX(150px) translateY(0px) ;}
+    32% {transform: translateX(200px) translateY(0px) ;}
+    40% {transform: translateX(200px) translateY(100px) ;}
+    48% {transform: translateX(150px) translateY(100px);}
     49% {transform: translateX(150px) translateY(75px) ;}
     56% {transform: translateX(100px) translateY(125px) ;}
     63% {transform: translateX(50px) translateY(75px) ;}
