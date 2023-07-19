@@ -14,9 +14,6 @@
     background-color: bisque;
     margin-bottom: 250px;
     border: 20px solid black;
-   
-
-
 }
 
 .flexRow{
@@ -116,34 +113,143 @@
     width: 100%;
     flex-direction: column;
 }
+@keyframes printSquare {
+    0%,100%{transform: translateX(0) translateY(0);}
+    25%{transform: translateX(90px);}
+    50%{transform: translateX(90px) translateY(90px);}
+    75%{transform: translateY(90px) translateX(0);}
+}
 .b40{
     background-color: aqua;
     width: 40%;
 }
+.b40:hover{
+    animation: printSquare 1s 2;
+}
+@keyframes bounce {
+    0%,100%{transform: translateY(0px);}
+    90% {transform: translateY(-120px);}
+}
+
+
+
+
 .b60{
     background-color: darkmagenta;
     width: 60%;
 }
+
+
+.b60:hover{
+    animation: bounce 1s infinite;
+
+}
+
 .b35{
     background-color: red;
     width: 35%;
 }
+
+
+
+
+
+.b35:hover{
+    background-color: wheat;
+    width: 65%;
+
+    transform:rotate(3600000deg) translateX(10px) translateY(10px);
+
+    transition: background-color 1s, width 1s, transform 1s;
+    
+    .b35Visible{
+        font-size: 100px;
+        transition:  font-size 1s;
+
+    }
+    
+
+    /*.b35Visible{
+        display: none;
+    }
+    .b65Visible{
+        display:flex;
+    }*/
+
+}
+
+.b65Visible{
+    display: none;
+}
+
+
+
+
+@keyframes hexagon {
+    0%,100%{transform: translateX(0px) translateY(0px);}
+    15% {transform: translateX(100px) translateY(0px) ;}
+    30% {transform: translateX(150px) translateY(50px) ;}
+    45% {transform: translateX(100px) translateY(100px) ;}
+    62% {transform: translateX(0px) translateY(100px) ;}
+    80% {transform: translateX(-50px) translateY(50px) ;}
+    
+}
+@keyframes triangle {
+    0%,100%{transform: translateX(0px) translateY(0px);}
+    33% {transform: translateX(33px) translateY(33px);}
+    66% {transform: translateX(-33px) translateY(33px)}
+    
+}
+
+@keyframes M3D {
+    
+    0%,100%{transform: translateX(0px) translateY(0px);}
+    7% {transform: translateX(50px) translateY(0px) ;}
+    14% {transform: translateX(100px) translateY(50px) ;}
+    21% {transform: translateX(150px) translateY(0px) ;}
+    28% {transform: translateX(200px) translateY(0px) ;}
+    35% {transform: translateX(200px) translateY(100px) ;}
+    42% {transform: translateX(150px) translateY(100px);}
+    49% {transform: translateX(150px) translateY(75px) ;}
+    56% {transform: translateX(100px) translateY(125px) ;}
+    63% {transform: translateX(50px) translateY(75px) ;}
+    70% {transform: translateX(50px) translateY(175px) ;}
+    77% {transform: translateX(100px) translateY(175px) ;} 
+    84% {transform: translateX(50px) translateY(175px) ;}
+    
+
+}
+
 .b65{
     background-color: chartreuse; 
     width: 65%;
+}
+/*b65 hover ekle mert*/
+.b65:hover{
+    animation: M3D 10s infinite;
 }
 .b20{
     height: 20%;
     background-color: blueviolet;
 }
+.b20:hover{
+    animation: hexagon 3s infinite;
+}
+/*b20 hovera ekle emre*/
 .b30{
     height: 30%;
     background-color: purple;
+}
+/*b30a hover ekle Suleyman*/
+.b30:hover {
+    animation: triangle 3s infinite;
 }
 .b50{
     height: 50%;
     background-color: blue;
 }
+
+/*b50 hover ekle husrev*/
 
 .b20, .b30, .b35, .b40, .b50, .b60, .b65{
     display: flex;
