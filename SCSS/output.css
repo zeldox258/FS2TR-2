@@ -1,0 +1,115 @@
+.a {
+  background-color: aqua;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.b {
+  text-align: center;
+  color: yellow;
+}
+.b .c {
+  color: aqua;
+}
+.b .c .d {
+  color: white;
+}
+.b .c .d:hover {
+  background-color: darkblue;
+}
+.b .c .z:hover {
+  background-color: blueviolet;
+}
+.b .d {
+  color: blue;
+}
+
+.Emre {
+  width: 290px;
+}
+
+body {
+  background-color: blue;
+}
+
+ul #item-1 {
+  background-color: red;
+}
+ul #item-2 {
+  background-color: aqua;
+}
+ul #item-3 {
+  background-color: red;
+}
+ul #item-4 {
+  background-color: aqua;
+}
+ul #item-5 {
+  background-color: red;
+}
+ul #item-6 {
+  background-color: aqua;
+}
+ul #item-7 {
+  background-color: red;
+}
+ul #item-8 {
+  background-color: aqua;
+}
+ul #item-9 {
+  background-color: red;
+}
+
+/*
+HUSREV
+
+
+write mixin and use this mixin in 3 class
+*/
+.a {
+  position: relative;
+}
+.a .b {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.a .c {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.a .c .d {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.husrev, .husrev1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.suleyman {
+  width: 100px;
+}
+
+/*
+npm install -g sass
+sass input.scss output.css
+sass --watch input.scss:output.css
+*/
+
+/*# sourceMappingURL=output.css.map */

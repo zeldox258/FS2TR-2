@@ -1,0 +1,167 @@
+@use 'sass:math';
+@import 'values';
+
+@mixin flexBox{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+}
+
+.a{
+    background-color: aqua;
+    color: $EmreBackground;
+    @include flexBox;
+    @include flexBox;
+
+}
+
+.b{
+    text-align: center;
+    .c{
+        color: aqua;
+        .d{
+            color: white;
+            &:hover{
+                background-color: darkblue;
+            }
+        }
+        .z:hover{
+            background-color: blueviolet;
+        }
+    }
+    .d{
+        color:blue;
+    }
+    color: yellow;
+}
+
+
+@function calcDiv($number){
+    @return math.div($number,2);
+}
+
+
+.Emre{
+    width: calcDiv(580px);
+}
+
+
+
+
+@function biggerThan10($number){
+    @if $number >10{
+        @return true;
+    }
+    @return false;
+}
+
+body{
+
+    @if biggerThan10(5){
+        background-color: red;
+    }
+
+    @else{
+        background-color: blue;
+    }
+
+
+}
+
+
+
+ul{
+    @for $i from 1 to 10{
+        $id : "item-#{$i}";
+
+        @if $i % 2 == 0 {
+            ##{$id}{
+                background-color: aqua;
+            }
+        }
+
+        @else{
+            ##{$id}{
+                background-color: red;
+            }
+        }
+
+
+       }
+}
+
+
+/*
+HUSREV
+
+
+write mixin and use this mixin in 3 class
+*/
+
+@mixin centerItem{
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.a {
+    position: relative;
+    
+    .b {
+        @include centerItem();
+    }
+
+    .c {
+        @include centerItem();
+
+        .d{
+            @include centerItem();
+        }
+    }
+
+    
+}
+
+
+//write function that gets parameter as a pixel. if pixel is bigger than 750 return 300
+//else if pixel biger than 500 return 200
+//else return 100
+
+
+
+@function pixel($width){
+    @if $width > 750px {
+    
+        @return 300px ;
+    }
+    @else if $width >500px {
+
+        @return 200px ;
+    }
+    
+    @return 100px;
+}
+
+
+.husrev{
+    @include centerItem;
+}
+
+.husrev1{
+    @extend .husrev;
+}
+
+
+.suleyman{
+    width: pixel(500px);
+}
+
+/*
+npm install -g sass
+sass input.scss output.css
+sass --watch input.scss:output.css
+*/
