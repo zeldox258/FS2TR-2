@@ -41,7 +41,7 @@
 }
 
 .a15{
-    
+
     background-color: yellow;
     width: 15%;
 
@@ -161,13 +161,13 @@
     transform:rotate(3600000deg) translateX(10px) translateY(10px);
 
     transition: background-color 1s, width 1s, transform 1s;
-    
+
     .b35Visible{
         font-size: 100px;
         transition:  font-size 1s;
 
     }
-    
+
 
     /*.b35Visible{
         display: none;
@@ -192,17 +192,17 @@
     45% {transform: translateX(100px) translateY(100px) ;}
     62% {transform: translateX(0px) translateY(100px) ;}
     80% {transform: translateX(-50px) translateY(50px) ;}
-    
+
 }
 @keyframes triangle {
     0%,100%{transform: translateX(0px) translateY(0px);}
     33% {transform: translateX(33px) translateY(33px);}
     66% {transform: translateX(-33px) translateY(33px)}
-    
+
 }
 
 @keyframes M3D {
-    
+
     0%,100%{transform: translateX(0px) translateY(0px);}
     8% {transform: translateX(50px) translateY(0px) ;}
     16% {transform: translateX(100px) translateY(50px) ;}
@@ -210,18 +210,18 @@
     32% {transform: translateX(200px) translateY(0px) ;}
     40% {transform: translateX(200px) translateY(100px) ;}
     48% {transform: translateX(150px) translateY(100px);}
-    49% {transform: translateX(150px) translateY(75px) ;}
-    56% {transform: translateX(100px) translateY(125px) ;}
-    63% {transform: translateX(50px) translateY(75px) ;}
-    70% {transform: translateX(50px) translateY(175px) ;}
-    77% {transform: translateX(100px) translateY(175px) ;} 
-    84% {transform: translateX(50px) translateY(175px) ;}
-    
+    56% {transform: translateX(150px) translateY(75px) ;}
+    64% {transform: translateX(100px) translateY(100px) ;}
+    72% {transform: translateX(50px) translateY(75px) ;}
+    80% {transform: translateX(50px) translateY(100px) ;}
+    88% {transform: translateX(0px) translateY(100px) ;}
+    96% {transform: translateX(0px) translateY(0px) ;}
+
 
 }
 
 .b65{
-    background-color: chartreuse; 
+    background-color: chartreuse;
     width: 65%;
 }
 /*b65 hover ekle mert*/
@@ -255,4 +255,146 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+@media (max-width: 600px)  and (min-width: 500px){
+
+  .b50{
+    background-color: red;
+  }
+
+
+
+}
+
+/*Emre*/
+
+/*
+@media (min-width: 300px) and (max-width: 650px) {
+       .b65{
+         background-color: black;
+         color: azure;
+       }
+       .b65:hover{
+         animation: triangle 3s infinite;
+       }
+}*/
+
+/*Suleyman*/
+
+/*
+@media (min-width: 300px) and (max-width: 500px) {
+        .b65 {
+          background-color: black;
+        }
+        .b65:hover {
+          animation: triangle 2s infinite;
+        }
+ }
+*/
+
+
+/*Husrev*/
+
+@keyframes tri {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(100px, 100px)
+  }
+
+  66% {
+    transform: translate(-100px, 100px)
+  }
+}
+
+
+@media (max-width: 650px) and (min-width: 300px) {
+  .b65 {
+    background: #2b2929;
+  }
+
+
+
+  .b65:hover {
+    animation-name: tri;
+    animation-duration: 4s;
+  }
+}
+
+
+@media (min-width: 200px) and (max-width: 700px) {
+  .b35 {
+    font-size: 1.5rem;
+    background-color: #5fd8ee;
+  }
+
+  .b35:hover {
+
+    /*transform: translate(50px, 50px) scale(1.7, .5);
+    transition: all 1s ease-in-out;*/
+
+    animation: tri 2s infinite;
+
+
+  }
+}
+
+
+
+/*  300 ve 650 width pixelleri arasindaysa ekran b65in arka plani siyah olsun ve hoveri ucgen cizsin  */
+
+
+/*
+200 - 700 arasi b35 font size degisecek, background color degisecek width degisecek height degisecek
+hover durumunda yine hepsi degisecek ekstra olarak sag asagiya rotate atmadan gidecek.
+*/
+
+
+.grid-item {
+  background-color: #e9e9e9;
+  padding: 20px;
+  text-align: center;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(10px, 1fr)); /*3fr 15fr 10fr;*/
+  grid-template-rows: 1fr 2fr 3fr;
+  grid-gap: 10px;
+}
+
+.redbc{
+  background-color: red;
+}
+
+
+
+
+.a {
+    grid-area: a;
+}
+
+.b {
+    grid-area: b;
+}
+
+.c {
+    grid-area: c;
+}
+
+.d{
+    grid-area: d;
+}
+
+.grid-container2 {
+    display: grid;
+    grid-template-areas:
+      "a a a"
+      "b c c"
+      "b c c"
+      "d d d";
+    grid-gap: 20px;
 }
