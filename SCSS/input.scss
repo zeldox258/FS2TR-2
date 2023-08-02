@@ -165,3 +165,188 @@ npm install -g sass
 sass input.scss output.css
 sass --watch input.scss:output.css
 */
+
+
+
+/*
+
+Add a new section to the layout as the picture displays. 
+The boxes are squares of 45px per side (to be converted into rem) and their alignment is performed
+ with flex rules. The background color, the color, and the font-size can be handled
+  using the flow control (@for, @if, etc...) and the darken and lighten methods 
+  (the numbers have a multiplier equal to 5) In particular, you need to create 
+the classes .fs-1rem, .fs-2rem e .fs-3rem using @each The added colors are black and white only
+
+*/
+
+
+
+/*
+
+2 adet mixin tanimlayin, daha sonra bu mixinler ic ice olan iki classa da ekleyin.
+.a{
+ include d1 ve d2
+}
+.a .b{
+ include d1 ve d2
+
+}
+
+.c{
+    a 
+    for 50 sub class
+}
+
+daha sonra c classi yaratip. c classini .a classindan extendleyin. 
+
+daha sonra c clasinin icinde .fs-1rem - 2 -3 -4 diye giderek 50 adet ic classlar olusturun ve
+
+id %5 0 sa beyaz background, degilse red background olsun.
+
+*/
+
+@mixin bg-red {
+    background-color: red;
+  }
+  
+  @mixin color-blue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .a {
+    @include bg-red();
+    @include color-blue();
+  
+    .b {
+      @include bg-red();
+      @include color-blue();
+    }
+  }
+  
+  .c {
+    @extend .a;
+  
+    div {
+      width: 10px;
+      height: 10px;
+      border: 1px solid black;
+    }
+  
+    @for $i from 1 through 10 {
+      .fs-#{$i}rem {
+        @if $i % 5 == 0 {
+          background-color: white;
+        } @else {
+          background-color: red;
+        }
+      }
+    }
+  }
+
+
+  /*
+
+  2 adet ayri function olsun
+
+  biri width yada height olarak parametre
+
+  function f1(param,param2){//param = string,param2 = number
+    eger width gelirse param2*5;
+    else param2*2
+  }
+
+  function f2(param){//number
+    param %5 0 sa "block"
+    1 se "flex"
+    2 ise "grid"
+    3 se "inline"
+    4 se "contents"
+  }
+
+  $temp : f1("width",25);
+  $temp2: f2(temp);
+  
+
+  .suleyman{
+    display : $temp2;
+  }
+
+  
+  
+  */
+
+  
+  @function f1($str, $num) {
+    $result: 1;
+    @if $str == "width" {
+      $result: $num * 7;
+    } @else {
+      $result: $num * 2;
+    }
+  
+    @return $result;
+  }
+  
+  @function f2($number) {
+    $result: "";
+    $mod5: $number % 5;
+    @if $mod5 == 0 {
+      $result: "block";
+    } @else if $mod5 == 1 {
+      $result: "flex";
+    } @else if $mod5 == 2 {
+      $result: 'grid';
+    } @else if $mod5 == 3 {
+      $result: 'inline';
+    } @else if $mod5 == 4 {
+      $result: 'contents';
+    }
+  
+    @return $result;
+  }
+  
+  $temp: f1('width', 12);
+  $temp2: f2($temp);
+  
+  .husrev {
+    display: $temp2;
+  }
+
+
+
+
+@function emref1($string, $number) {
+    @if $string == 'width' {
+        @return $number * 7;
+    }
+
+    @return $number * 2;
+}
+
+@function emref2($number) {
+    @if $number % 5==0 {
+        @return block;
+    }
+
+    @else if $number % 5==1 {
+        @return flex;
+    }
+
+    @else if $number % 5==2 {
+        @return grid;
+    }
+
+    @else if $number % 5==3 {
+        @return inline;
+    }
+
+    @else if $number % 5==4 {
+        @return content;
+    }
+}
+
+.emre {
+    display: emref2(emref1('width',11));
+}

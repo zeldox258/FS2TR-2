@@ -1,4 +1,4 @@
-.a {
+.a, .c {
   background-color: aqua;
   color: red;
   display: flex;
@@ -73,22 +73,22 @@ HUSREV
 
 write mixin and use this mixin in 3 class
 */
-.a {
+.a, .c {
   position: relative;
 }
-.a .b {
+.a .b, .c .b {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.a .c {
+.a .c, .c .c {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.a .c .d {
+.a .c .d, .c .c .d {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -111,5 +111,124 @@ npm install -g sass
 sass input.scss output.css
 sass --watch input.scss:output.css
 */
+/*
+
+Add a new section to the layout as the picture displays. 
+The boxes are squares of 45px per side (to be converted into rem) and their alignment is performed
+ with flex rules. The background color, the color, and the font-size can be handled
+  using the flow control (@for, @if, etc...) and the darken and lighten methods 
+  (the numbers have a multiplier equal to 5) In particular, you need to create 
+the classes .fs-1rem, .fs-2rem e .fs-3rem using @each The added colors are black and white only
+
+*/
+/*
+
+2 adet mixin tanimlayin, daha sonra bu mixinler ic ice olan iki classa da ekleyin.
+.a{
+ include d1 ve d2
+}
+.a .b{
+ include d1 ve d2
+
+}
+
+.c{
+    a 
+    for 50 sub class
+}
+
+daha sonra c classi yaratip. c classini .a classindan extendleyin. 
+
+daha sonra c clasinin icinde .fs-1rem - 2 -3 -4 diye giderek 50 adet ic classlar olusturun ve
+
+id %5 0 sa beyaz background, degilse red background olsun.
+
+*/
+.a, .c {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.a .b, .c .b {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c div {
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+}
+.c .fs-1rem {
+  background-color: red;
+}
+.c .fs-2rem {
+  background-color: red;
+}
+.c .fs-3rem {
+  background-color: red;
+}
+.c .fs-4rem {
+  background-color: red;
+}
+.c .fs-5rem {
+  background-color: white;
+}
+.c .fs-6rem {
+  background-color: red;
+}
+.c .fs-7rem {
+  background-color: red;
+}
+.c .fs-8rem {
+  background-color: red;
+}
+.c .fs-9rem {
+  background-color: red;
+}
+.c .fs-10rem {
+  background-color: white;
+}
+
+/*
+
+2 adet ayri function olsun
+
+biri width yada height olarak parametre
+
+function f1(param,param2){//param = string,param2 = number
+  eger width gelirse param2*5;
+  else param2*2
+}
+
+function f2(param){//number
+  param %5 0 sa "block"
+  1 se "flex"
+  2 ise "grid"
+  3 se "inline"
+  4 se "contents"
+}
+
+$temp : f1("width",25);
+$temp2: f2(temp);
+
+
+.suleyman{
+  display : $temp2;
+}
+
+
+
+*/
+.husrev, .husrev1 {
+  display: "contents";
+}
+
+.emre {
+  display: grid;
+}
 
 /*# sourceMappingURL=output.css.map */
